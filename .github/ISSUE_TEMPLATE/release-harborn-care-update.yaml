@@ -1,0 +1,85 @@
+name: "Release Checklist - Harborn Care Update"
+description: "Checklist to verify before releasing a new version to production."
+title: "[Release] vX.Y.Z"
+labels: ["release", "checklist"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🚀 Release Checklist
+        Before releasing version `vX.Y.Z`, ensure that all required checks have been completed.
+
+  - type: input
+    id: release-version
+    attributes:
+      label: "Release Version"
+      description: "Specify the release version (e.g., v1.2.3)."
+      placeholder: "vX.Y.Z"
+
+  - type: textarea
+    id: release-summary
+    attributes:
+      label: "Summary of Changes"
+      description: "Provide a brief description of the changes in this release."
+      placeholder: "Describe new features, fixes, and improvements."
+
+  - type: checkboxes
+    id: communication-checks
+    attributes:
+      label: "Communication & Planning"
+      description: "Ensure proper internal alignment and scheduling."
+      options:
+        - label: "✅ Internal communication has been done"
+        - label: "✅ The time of release has been chosen with care"
+
+  - type: checkboxes
+    id: quality-assurance
+    attributes:
+      label: "Quality Assurance"
+      description: "Verify key functionality before release."
+      options:
+        - label: "✅ Primary conversion paths have been checked"
+        - label: "✅ Regression test has been performed"
+        - label: "✅ Some test has been performed"
+
+  - type: checkboxes
+    id: deployment-checks
+    attributes:
+      label: "Deployment Readiness"
+      description: "Confirm that deployment preparations are complete."
+      options:
+        - label: "✅ Deployment instructions updated"
+        - label: "✅ Database migrations reviewed and tested"
+        - label: "✅ Feature flags or environment variables configured"
+        - label: "✅ Rollback plan documented"
+
+  - type: checkboxes
+    id: post-release-checks
+    attributes:
+      label: "Post-Release Validation"
+      description: "Ensure the system is stable after deployment."
+      options:
+        - label: "✅ Quick validation has been performed after release"
+        - label: "✅ Validate version in App Store (if applicable)"
+        - label: "✅ Monitoring logs"
+        - label: "✅ Check for exception messages in console browser (front-end)"
+        - label: "✅ Check browser resources usage"
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: "Additional Notes"
+      description: "Add any extra details or considerations for this release."
+      placeholder: "Any additional comments or reminders."
+
+  - type: dropdown
+    id: approval
+    attributes:
+      label: "Approval Status"
+      description: "Select the final approval status."
+      options:
+        - "🔄 Pending Review"
+        - "✅ Approved for Release"
+        - "❌ Requires Revisions"
